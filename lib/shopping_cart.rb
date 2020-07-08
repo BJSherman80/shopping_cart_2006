@@ -6,5 +6,10 @@ class ShoppingCart
     @products = []
   end
 
-  
+  def add_product(item)
+    @products << item
+  end
+
+
+
 end
