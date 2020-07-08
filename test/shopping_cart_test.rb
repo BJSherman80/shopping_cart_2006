@@ -56,4 +56,7 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product4)
     assert_equal true, cart.is_full
   end
+
+
+
 end
