@@ -6,6 +6,7 @@ class Product
     @name = name
     @unit_price = unit_price
     @quantity = quantity.to_i
+    @hoarded = false
   end
 
   def total_price
@@ -13,14 +14,10 @@ class Product
   end
 
   def hoard
-    @quantity == 0
+    @quantity == true
   end
 
   def is_hoarded?
-    if quantity == 0
-      true
-    else
-      false
-    end
+    @hoarded
   end
 end
