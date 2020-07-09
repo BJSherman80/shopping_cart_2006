@@ -42,6 +42,11 @@ class ShoppingCartTest < Minitest::Test
     assert_equal [product1, product2],cart.products
   end
 
+  def test_details_returns_a_hash
+
+    assert_equal ({name: 'King Soopers'. capacity: 30}), cart.dertails
+  end
+
   def total_number_of_products
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
@@ -52,9 +57,9 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product2)
     cart.add_product(product3)
     assert_equal 13, cart.total_number_of_products
-    assert_equal false, cart.is_full
+    assert_equal false, cart.is_full?
     cart.add_product(product4)
-    assert_equal true, cart.is_full
+    assert_equal true, cart.is_full?
   end
 
 
